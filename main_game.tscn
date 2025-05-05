@@ -607,9 +607,9 @@ position = Vector2(-786, 26)
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Dialog" type="Panel" parent="UI"]
-offset_left = 3.0
+offset_left = 5.0
 offset_top = 382.0
-offset_right = 1009.0
+offset_right = 1011.0
 offset_bottom = 422.0
 script = ExtResource("4_6bm6p")
 
@@ -623,13 +623,19 @@ text = "Press E to interact"
 
 [node name="ButtonYes" type="Button" parent="UI/Dialog"]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 327.0
+offset_top = 4.0
+offset_right = 361.0
+offset_bottom = 35.0
+text = "yes"
 
 [node name="ButtonNo" type="Button" parent="UI/Dialog"]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 381.0
+offset_top = 4.0
+offset_right = 412.0
+offset_bottom = 35.0
+text = "No"
 
 [node name="Instruction" type="Label" parent="UI"]
 offset_left = 260.0
@@ -658,3 +664,6 @@ offset_bottom = 31.0
 text = "Speed: 0 px/s"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[connection signal="pressed" from="UI/Dialog/ButtonYes" to="UI/Dialog" method="_on_ButtonYes_pressed"]
+[connection signal="pressed" from="UI/Dialog/ButtonNo" to="UI/Dialog" method="_on_ButtonNo_pressed"]

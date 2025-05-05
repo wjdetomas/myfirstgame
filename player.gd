@@ -46,7 +46,7 @@ func _physics_process(delta):
 	# Check if player is interacting with an NPC
 	if Input.is_action_just_pressed("ui_accept") and interacting:
 		if current_npc and dialog:
-			dialog.show_message(current_npc.message)
+			dialog.show_message(current_npc.message,true)
 
 # Called when player enters an NPC's area
 #func _on_InteractionArea_entered(area):
@@ -70,7 +70,7 @@ func _on_InteractionArea_area_entered(area: Area2D) -> void:
 		current_npc = area
 		interacting = true
 		if dialog:
-			dialog.show_message("Press E to interact")
+			dialog.show_message("Press E to interact", false)
 
 
 func _on_InteractionArea_area_exited(area: Area2D) -> void:
