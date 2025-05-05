@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://clho5hefut24y"]
+
+[ext_resource type="Script" uid="uid://p4atr5a8em1j" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://djdrjerinsw11" path="res://assets/stickMan.png" id="2_i3pqv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
+size = Vector2(23, 33)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(31, 20)
+texture = ExtResource("2_i3pqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(29.5, 20.5)
+shape = SubResource("RectangleShape2D_hqtel")
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+position = Vector2(29, 19)
+limit_left = 0
+limit_top = 0
+limit_right = 1024
+limit_bottom = 1024
+drag_horizontal_enabled = true
+drag_vertical_enabled = true

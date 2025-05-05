@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://btj8rpg5ebu67"]
+
+[sub_resource type="GDScript" id="GDScript_ykeeq"]
+script/source = "# dialog.gd
+extends Panel
+
+var label : Label
+
+func _ready():
+	label = $DialogText
+	hide()
+
+# Function to display message
+func show_message(message: String):
+	label.text = message
+	show()
+
+# Function to hide dialog
+func hide_dialog():
+	hide()
+"
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Instruction" type="Label" parent="."]
+offset_left = 260.0
+offset_top = 8.0
+offset_right = 549.0
+offset_bottom = 31.0
+text = "Use arrow keys to move around!"
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="PositionLabel" type="Label" parent="."]
+offset_left = 147.0
+offset_top = 8.0
+offset_right = 209.0
+offset_bottom = 31.0
+text = "x: 0, y: 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SpeedLabel" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 8.0
+offset_right = 104.0
+offset_bottom = 31.0
+text = "Speed: 0 px/s"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Dialog" type="Label" parent="."]
+visible = false
+offset_left = 2.0
+offset_top = 248.0
+offset_right = 42.0
+offset_bottom = 271.0
+script = SubResource("GDScript_ykeeq")
+
+[node name="Label" type="Label" parent="Dialog"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Hello!"
